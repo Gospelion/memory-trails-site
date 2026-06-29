@@ -16,8 +16,8 @@ export default function InstallPage() {
       </Link>
       <h1>Get the Chrome extension</h1>
       <p className="page-copy">
-        The free extension is the starting point. After the Chrome Web Store listing is live, this page should send
-        readers directly to the official extension page.
+        Where Was I? is currently planned as a free Chrome extension. After the Chrome Web Store listing is live, this
+        page should send readers directly to the official extension page.
       </p>
 
       <div className="callout">
@@ -25,9 +25,6 @@ export default function InstallPage() {
           <Link className="button button-primary" href={chromeExtensionHref}>
             Open Chrome extension page
           </Link>
-        </p>
-        <p>
-          Pro is sold from the official website, not from this installation guide.
         </p>
       </div>
 

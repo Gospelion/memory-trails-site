@@ -22,6 +22,7 @@ Project-level instructions and durable memory for Codex agents working in this r
 ## Conventions
 
 - Keep product repositories independent from this site; add product-facing website data to `src/lib/products.ts` instead of importing from sibling repos.
+- Current ecosystem positioning has no paid content, subscription, Pro plan, or checkout flow.
 
 ## Open Questions
 

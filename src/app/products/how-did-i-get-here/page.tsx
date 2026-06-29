@@ -1,7 +1,11 @@
 ﻿import Link from "next/link";
-import { ecosystemProducts } from "@/lib/products";
+import { howDidIGetHere } from "@/lib/products";
 
-const product = ecosystemProducts.find((item) => item.id === "how-did-i-get-here");
+const focusAreas = [
+  "Show the recent browser path that led to the current page.",
+  "Help you recover why a tab mattered without turning browsing into a social feed.",
+  "Fit alongside Where Was I? as a small, focused memory tool.",
+];
 
 export const metadata = {
   title: "How Did I Get Here? - Memory Trails",
@@ -14,17 +18,24 @@ export default function HowDidIGetHerePage() {
       <Link className="brand-link" href="/">
         Memory Trails
       </Link>
-      <h1>{product?.name}</h1>
+      <h1>{howDidIGetHere.name}</h1>
       <p className="page-copy">
-        {product?.description} This page is a placeholder for the product's future website content while the ecosystem
-        site is being separated from the original Where Was I? monorepo.
+        {howDidIGetHere.description} It is designed for the moment when a useful page is open, but the chain of clicks,
+        searches, and references that made it useful has faded.
       </p>
 
       <h2>Status</h2>
       <p>
-        Product website copy, screenshots, install links, privacy notes, and release notes should be added here when
-        this product is ready to be presented alongside Where Was I?.
+        This product is in design. The current Memory Trails plan has no paid content, and this page will grow as the
+        extension's behavior, privacy notes, screenshots, and installation path become ready to publish.
       </p>
+
+      <h2>Focus</h2>
+      <ul>
+        {focusAreas.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </main>
   );
 }

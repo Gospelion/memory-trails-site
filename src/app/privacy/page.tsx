@@ -35,7 +35,7 @@ export default function PrivacyPage() {
       <h2>What is not included</h2>
       <p>
         The v0.1 extension does not add login, cloud sync, AI summaries, notes, highlights, PDF tracking, or video
-        tracking. Any Pro sync behavior should be documented before it is enabled.
+        tracking. Any future sync or account behavior should be documented before it is enabled.
       </p>
     </main>
   );

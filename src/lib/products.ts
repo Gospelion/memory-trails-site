@@ -1,11 +1,11 @@
 ﻿export const ecosystem = {
   name: "Memory Trails",
-  tagline: "Small browser tools for remembering where your attention left off.",
+  tagline: "Browser memory tools for retracing attention, reading, and context.",
   description:
     "Memory Trails is a product ecosystem for lightweight browser memory, reading continuity, and navigation recall.",
 } as const;
 
-export const product = {
+export const whereWasI = {
   name: "Where Was I?",
   shortName: "Where Was I",
   tagline: "Continue reading from where you left off.",
@@ -17,16 +17,17 @@ export const product = {
   repositoryUrl: "",
 } as const;
 
-export const proPlan = {
-  name: "Pro lifetime",
-  provider: "PayPal",
-  productId: "pro_lifetime",
-  earlyBirdPrice: "$4.99",
-  regularPrice: "$9.99",
-  earlyBirdLimit: 100,
-  paypalCheckoutUrl: "https://www.paypal.com/",
-  status: "available",
+export const howDidIGetHere = {
+  name: "How Did I Get Here?",
+  shortName: "How Did I Get Here",
+  tagline: "Understand the path that brought you to the current page.",
+  description:
+    "A sibling Chrome extension in the Memory Trails ecosystem for tracing browsing context and navigation paths.",
+  href: "/products/how-did-i-get-here",
+  status: "in design",
 } as const;
+
+export const product = whereWasI;
 
 export const privacyPromises = [
   "Reading positions stay local in the browser for v0.1.",
@@ -43,21 +44,20 @@ export const installPaths = {
 export const ecosystemProducts = [
   {
     id: "where-was-i",
-    name: product.name,
-    shortName: product.shortName,
-    tagline: product.tagline,
-    description: product.description,
+    name: whereWasI.name,
+    shortName: whereWasI.shortName,
+    tagline: whereWasI.tagline,
+    description: whereWasI.description,
     href: "/",
     status: "available",
   },
   {
     id: "how-did-i-get-here",
-    name: "How Did I Get Here?",
-    shortName: "How Did I Get Here",
-    tagline: "Understand the path that brought you to the current page.",
-    description:
-      "A sibling Chrome extension in the Memory Trails ecosystem for tracing browsing context and navigation paths.",
-    href: "/products/how-did-i-get-here",
-    status: "planned",
+    name: howDidIGetHere.name,
+    shortName: howDidIGetHere.shortName,
+    tagline: howDidIGetHere.tagline,
+    description: howDidIGetHere.description,
+    href: howDidIGetHere.href,
+    status: howDidIGetHere.status,
   },
 ] as const;

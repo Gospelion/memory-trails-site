@@ -1,42 +1,27 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { ecosystemProducts, privacyPromises, proPlan, product } from "@/lib/products";
+import { ecosystem, ecosystemProducts, privacyPromises, product } from "@/lib/products";
 
 const features = [
   {
-    title: "Free remembers your latest 5 pages",
-    body: "Start with local reading memory for the handful of pages you actually want to finish.",
+    title: "Reading continuity",
+    body: "Where Was I remembers the point where your attention stopped so a reopened page feels less cold.",
   },
   {
-    title: "Pro restores without extra steps",
-    body: "Automatic revisit prompts help you continue when you return to a saved page.",
+    title: "Path awareness",
+    body: "How Did I Get Here explores the context trail that brought you from one page to another.",
   },
   {
-    title: "Quiet on low-value pages",
-    body: "Short pages, browser pages, and tiny scrolls are ignored so the extension stays out of the way.",
+    title: "Small, focused tools",
+    body: "Each product answers one browser-memory question without turning into a feed, notebook, or account system.",
   },
   {
-    title: "Made for normal reading",
-    body: "No summaries, notes, highlights, or feed. Just the place you stopped and a way back.",
+    title: "Built to expand",
+    body: "The ecosystem can grow into more context and recall tools while keeping each product independently useful.",
   },
-];
-
-const freeFeatures = [
-  "Latest 5 local reading records",
-  "Continue Prompt after opening a record from the popup",
-  "Local Chrome storage",
-  "No account required",
-];
-
-const proFeatures = [
-  "Lifetime unlock",
-  "Automatic Continue Prompt when revisiting saved pages",
-  "Chrome sync support when enabled",
-  "Richer history management",
 ];
 
 const chromeExtensionHref = product.chromeWebStoreUrl || product.chromeExtensionPageUrl;
-const paypalCheckoutUrl = process.env.NEXT_PUBLIC_PAYPAL_CHECKOUT_URL || proPlan.paypalCheckoutUrl;
 
 export default function HomePage() {
   return (
@@ -45,23 +30,22 @@ export default function HomePage() {
       <main>
         <section className="hero">
           <div>
-            <span className="eyebrow">Free Chrome extension + Pro lifetime unlock</span>
-            <h1>{product.tagline}</h1>
+            <span className="eyebrow">A growing ecosystem of free browser tools</span>
+            <h1>{ecosystem.tagline}</h1>
             <p className="hero-copy">
-              {product.description} Free is enough to try the habit. Pro is a one-time purchase for people who want the
-              prompt to appear automatically when they come back.
+              {ecosystem.description} The first product, {product.name}, helps you continue reading from where you left
+              off. The next product, How Did I Get Here?, focuses on the path that brought you to the current page.
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href={paypalCheckoutUrl}>
-                Buy Pro with PayPal
+              <Link className="button button-primary" href="#products">
+                Explore products
               </Link>
               <Link className="button button-secondary" href={chromeExtensionHref}>
-                Get the free extension
+                Get Where Was I
               </Link>
             </div>
             <p className="hero-note">
-              Early bird {proPlan.earlyBirdPrice} for the first {proPlan.earlyBirdLimit} users, then{" "}
-              {proPlan.regularPrice}. Lifetime license, no subscription.
+              Current plan: no paid content, no subscription, and no account requirement.
             </p>
           </div>
           <div className="hero-visual">
@@ -101,10 +85,10 @@ export default function HomePage() {
         </section>
 
         <section className="section product-section">
-          <h2>For the tabs you meant to finish.</h2>
+          <h2>Designed around the questions browsers leave unanswered.</h2>
           <p className="section-intro">
-            This is not a bookmarking system or a read-it-later app. It handles the tiny moment after you reopen an
-            article, documentation page, or essay and wonder where you stopped.
+            Memory Trails is not trying to become a giant productivity suite. It is a set of quiet tools for recovering
+            your place, understanding your path, and making browser context easier to resume.
           </p>
           <div className="feature-grid">
             {features.map((feature) => (
@@ -113,50 +97,6 @@ export default function HomePage() {
                 <p>{feature.body}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="section pricing-section" id="pricing">
-          <div className="pricing-header">
-            <h2>Start free. Upgrade once.</h2>
-            <p className="section-intro">
-              Keep the free extension lightweight, then buy Pro if automatic reminders and richer history are worth it.
-            </p>
-          </div>
-          <div className="pricing-grid">
-            <article className="plan-card">
-              <div className="plan-top">
-                <span className="plan-label">Free</span>
-                <strong>$0</strong>
-                <p>For trying the reading-memory habit.</p>
-              </div>
-              <ul className="plan-list">
-                {freeFeatures.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-              <Link className="button button-secondary" href={chromeExtensionHref}>
-                Get free
-              </Link>
-            </article>
-            <article className="plan-card plan-card-featured">
-              <div className="plan-top">
-                <span className="plan-label">Pro lifetime</span>
-                <strong>
-                  {proPlan.earlyBirdPrice}
-                  <small> then {proPlan.regularPrice}</small>
-                </strong>
-                <p>For people who want the prompt to appear as soon as they revisit saved pages.</p>
-              </div>
-              <ul className="plan-list">
-                {proFeatures.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-              <Link className="button button-primary" href={paypalCheckoutUrl}>
-                Pay with PayPal
-              </Link>
-            </article>
           </div>
         </section>
 
@@ -187,12 +127,11 @@ function Header() {
       <div className="site-header-inner">
         <Link className="brand-link" href="/">
           <Image src="/brand/logo.png" alt="" width={32} height={32} />
-          <span>{product.shortName}</span>
+          <span>Memory Trails</span>
         </Link>
         <nav className="nav-links" aria-label="Primary">
           <Link href="#products">Products</Link>
-          <Link href={chromeExtensionHref}>Extension</Link>
-          <Link href="#pricing">Pricing</Link>
+          <Link href={chromeExtensionHref}>Where Was I</Link>
           <Link href="/privacy">Privacy</Link>
           <Link href="/changelog">Changelog</Link>
         </nav>
@@ -206,9 +145,9 @@ function Footer() {
     <footer className="site-footer">
       <div className="brand-mark">
         <Image src="/brand/logo.png" alt="" width={28} height={28} />
-        <span>{product.name}</span>
+        <span>Memory Trails</span>
       </div>
-      <p>Free Chrome reading memory with a Pro lifetime unlock via PayPal.</p>
+      <p>Free browser memory tools for reading continuity, navigation recall, and future context trails.</p>
     </footer>
   );
 }
