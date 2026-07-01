@@ -18,6 +18,9 @@ Project-level instructions and durable memory for Codex agents working in this r
 - This repository is the standalone official website for the Memory Trails ecosystem.
 - The initial site was migrated from sibling repository `Chrome-Plguin/Where-Was-I`, where it previously lived at `apps/site`.
 - Product and ecosystem metadata lives in `src/lib/products.ts` so the site does not depend on product repositories.
+- The homepage is an English-first ecosystem landing page that highlights `How Did I Get Here?` as the newest product and `Where Was I?` as the companion reading-continuity tool.
+- `How Did I Get Here?` homepage assets are copied into `public/product/how-did-i-get-here/`; do not reference the sibling product repository directly from site code.
+- `Where Was I?` has a Chrome Web Store listing at `https://chromewebstore.google.com/detail/where-was-i/ajmchpcbddhiocgkpflniinmemfplhjj`.
 
 ## Conventions
 

@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from "next";
-import { ecosystem, product } from "@/lib/products";
+import { ecosystem, howDidIGetHere, whereWasI } from "@/lib/products";
 import "./globals.css";
 
 const siteUrl =
@@ -8,11 +8,11 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: `${ecosystem.name} - Browser memory tools`,
-  description: `${ecosystem.description} The first product is ${product.name}, a Chrome extension for continuing reading from where you left off.`,
+  description: `${ecosystem.description} Explore ${howDidIGetHere.name} for research paths and ${whereWasI.name} for reading continuity.`,
   openGraph: {
     title: ecosystem.name,
     description: ecosystem.description,
-    images: ["/product/continue-prompt-en.png"],
+    images: [howDidIGetHere.assets.screenshotEn.src],
   },
 };
 
