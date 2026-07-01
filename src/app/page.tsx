@@ -115,19 +115,16 @@ export default function HomePage() {
           </p>
           <div className="product-carousel" aria-label="Memory Trails products">
             {productPair.map((item) => (
-              <article className="pair-card product-slide" key={item.name}>
-                <div className="product-card-logo">
-                  <Image src={item.logo.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
-                </div>
-                <div>
+              <Link className="pair-card product-slide" href={item.href} key={item.name}>
+                <div className="product-card-copy">
                   <span>{item.label}</span>
                   <strong>{item.name}</strong>
                   <p>{item.body}</p>
                 </div>
-                <Link className="text-link" href={item.href}>
-                  View tool
-                </Link>
-              </article>
+                <div className="product-card-logo">
+                  <Image src={item.logo.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
+                </div>
+              </Link>
             ))}
           </div>
         </section>
